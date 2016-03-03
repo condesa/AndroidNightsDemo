@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">AnimeRealmExample</string>
     <string name="action_settings">Settings</string>
+
+    <string name="label_added_success">Anime added!</string>
+    <string name="label_anime_title">Title</string>
+    <string name="label_anime_image_url">Image Url</string>
+    <string name="toolbar_add_anime">Add Anime</string>
+    <string name="button_add_anime">ADD</string>
+    <string name="error_empty_title">Ingrese el título del anime</string>
+    <string name="error_empty_image_url">Ingrese la url de la imagen del anime</string>
 </resources>

@@ -1,5 +1,6 @@
 package com.androidnights.animerealmexample.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
@@ -11,8 +12,12 @@ import com.androidnights.animerealmexample.adapter.AnimeAdapter;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
+import jp.wasabeef.recyclerview.adapters.AlphaInAnimationAdapter;
+import jp.wasabeef.recyclerview.adapters.ScaleInAnimationAdapter;
 
-public class AnimeListActivity extends BaseActivity implements AnimeAdapter.AnimeListener {
+public class AnimeListActivity extends BaseActivity
+        implements AnimeAdapter.AnimeListener{
 
     @Bind(R.id.toolbar)
     Toolbar toolbar;
@@ -31,12 +36,18 @@ public class AnimeListActivity extends BaseActivity implements AnimeAdapter.Anim
     protected void onStart() {
         super.onStart();
         recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
-        recyclerView.setAdapter(new AnimeAdapter(realmManager.getAllAnimes(), this));
+        AlphaInAnimationAdapter alphaAdapter = new AlphaInAnimationAdapter(new AnimeAdapter(realmManager.getAllAnimes(), this));
+        recyclerView.setAdapter(new ScaleInAnimationAdapter(alphaAdapter));
     }
 
     @Override
     public void onLongClick(int animeId) {
-        Log.i("TAG", "ID: " +animeId);
+        Log.i("TAG", "ID: " + animeId);
         realmManager.deleteAnimeById(animeId);
+    }
+
+    @OnClick(R.id.fab)
+    public void addAnime(){
+        startActivity(new Intent(this, AddAnimeActivity.class));
     }
 }

@@ -2,6 +2,8 @@ package com.androidnights.animerealmexample;
 
 import android.app.Application;
 
+import com.androidnights.animerealmexample.realm.RealmManager;
+
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
 
@@ -13,14 +15,6 @@ public class AnimeApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        initRealmConfiguration();
-    }
-
-    private void initRealmConfiguration() {
-        RealmConfiguration realmConfiguration =
-                new RealmConfiguration
-                        .Builder(this)
-                        .build();
-        Realm.setDefaultConfiguration(realmConfiguration);
+        RealmManager.initRealmConfiguration(this);
     }
 }

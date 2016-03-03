@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.androidnights.animerealmexample.R;
@@ -87,7 +88,7 @@ public class AnimeAdapter extends RecyclerView.Adapter<AnimeAdapter.ViewHolder>
         @Bind(R.id.label_genders)
         TextView labelGenders;
         @Bind(R.id.image)
-        SquareImageView image;
+        ImageView image;
 
         public ViewHolder(View itemView) {
             super(itemView);

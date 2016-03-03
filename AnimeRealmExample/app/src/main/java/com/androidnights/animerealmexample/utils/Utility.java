@@ -36,4 +36,24 @@ public class Utility {
         }
         return stringBuilder.toString();
     }
+
+    public static boolean isEmptyString(String string){
+        if(string == null){
+            return true;
+        }
+
+        if(string.equals(null)){
+            return true;
+        }
+
+        if(string.equals("null")){
+            return true;
+        }
+
+        if(string.equals("") || string.equals(" ")){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }

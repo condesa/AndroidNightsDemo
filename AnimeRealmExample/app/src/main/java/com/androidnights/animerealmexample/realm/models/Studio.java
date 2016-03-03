@@ -8,6 +8,7 @@ import io.realm.annotations.PrimaryKey;
  */
 public class Studio extends RealmObject {
 
+    @PrimaryKey
     private int id;
     private String name;
 

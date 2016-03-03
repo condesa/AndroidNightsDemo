@@ -30,6 +30,10 @@
             android:name=".activities.AnimeListActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".activities.AddAnimeActivity"
+            android:label="@string/toolbar_add_anime"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>
